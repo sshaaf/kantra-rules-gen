@@ -1,0 +1,17 @@
+# configmap-quarkus-prod.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # Choose a meaningful name, e.g., matching your application
+  name: my-quarkus-app-prod-config
+data:
+  quarkus.langchain4j.timeout: 60s
+  quarkus.elasticsearch.protocol: https
+  quarkus.kubernetes-client.trust-certs: 'true'
+  quarkus.kubernetes-config.secrets: app-credentials
+  quarkus.http.port: '8080'
+  quarkus.openshift.env.secrets: app-credentials
+  quarkus.kubernetes-config.secrets.enabled: 'true'
+  quarkus.websockets-next.server.auto-ping-interval: 1m
+  quarkus.openshift.route.tls.termination: edge
+binaryData: {}
