@@ -2,7 +2,7 @@
 
 A modern web-based chatbot application that generates Konveyor Kantra migration rules for Java developers migrating applications from one framework version to another. Uses LangChain4j and Gemini AI to generate rules in real-time.
 
-![Kantra Rules Generator Screenshot](src/main/resources/META-INF/resources/screenshot.jpg)
+![Kantra Rules Generator Screenshot](.github/assets/screenshot.jpg)
 
 ## Overview
 
