@@ -1,0 +1,202 @@
+body {
+    background-color: #f8f9fa;
+}
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+    background: #0d0d0d;
+}
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.user {
+    background-color: #0d6efd;
+    color: white;
+    align-self: flex-end;
+}
+.bot {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+.full-screen {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    border-radius: 0;
+}
+
+/* Copy button styling */
+.copy-yaml-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    opacity: 0.9;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.copy-yaml-btn:hover {
+    opacity: 1;
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.copy-yaml-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Code block styling */
+pre {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 8px 0;
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+    position: relative;
+}
+
+code {
+    background-color: rgba(27, 31, 35, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 85%;
+}
+
+/* Dark theme support for the chat interface */
+.chat-container.dark-theme,
+.chat-container .dark-theme {
+    background: #1a1a1a;
+    color: #f8f9fa;
+}
+
+.chat-container.dark-theme .chat-box,
+.chat-container .dark-theme .chat-box {
+    background: #0d0d0d;
+    border-color: #444;
+}
+
+.chat-container.dark-theme .message.bot,
+.chat-container .dark-theme .message.bot {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* Dark theme code blocks */
+.chat-container.dark-theme pre,
+.chat-container .dark-theme pre {
+    background-color: #282c34;
+    border-color: #3e4451;
+    color: #abb2bf;
+}
+
+.chat-container.dark-theme code,
+.chat-container .dark-theme code {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #abb2bf;
+}
+
+/* Override highlight.js styles for dark theme to match atom-one-dark */
+.chat-container.dark-theme .hljs,
+.chat-container .dark-theme .hljs {
+    background: #282c34 !important;
+    color: #abb2bf !important;
+}
+
+.chat-container.dark-theme .hljs-keyword,
+.chat-container .dark-theme .hljs-keyword {
+    color: #c678dd !important;
+}
+
+.chat-container.dark-theme .hljs-string,
+.chat-container .dark-theme .hljs-string {
+    color: #98c379 !important;
+}
+
+.chat-container.dark-theme .hljs-number,
+.chat-container .dark-theme .hljs-number {
+    color: #d19a66 !important;
+}
+
+.chat-container.dark-theme .hljs-comment,
+.chat-container .dark-theme .hljs-comment {
+    color: #5c6370 !important;
+    font-style: italic;
+}
+
+.chat-container.dark-theme .hljs-literal,
+.chat-container .dark-theme .hljs-literal {
+    color: #56b6c2 !important;
+}
+
+.chat-container.dark-theme .hljs-punctuation,
+.chat-container .dark-theme .hljs-punctuation {
+    color: #abb2bf !important;
+}
+
+.chat-container.dark-theme .hljs-attr,
+.chat-container .dark-theme .hljs-attr {
+    color: #e06c75 !important;
+}
+
+.chat-container.dark-theme .hljs-built_in,
+.chat-container .dark-theme .hljs-built_in {
+    color: #e06c75 !important;
+}
