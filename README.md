@@ -89,7 +89,6 @@ kantra-rules-gen/
 │   ├── main/
 │   │   ├── java/dev/shaaf/kantra/rules/gen/
 │   │   │   ├── ChatSocket.java          # WebSocket handler
-│   │   │   ├── GreetingResource.java    # REST endpoints
 │   │   │   └── RuleGenerator.java       # AI service interface
 │   │   └── resources/
 │   │       ├── META-INF/resources/      # Static web assets
