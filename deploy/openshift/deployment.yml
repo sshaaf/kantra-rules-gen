@@ -88,8 +88,8 @@ spec:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
 ---
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: kantra-rules-gen
   labels:
@@ -97,14 +97,14 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: kantra-rules-gen
-  strategy:
-    type: Rolling # Use default rolling update parameters
+    matchLabels:
+      app: kantra-rules-gen
   template:
     metadata:
       labels:
         app: kantra-rules-gen
     spec:
+      serviceAccountName: kantra-rules-gen
       containers:
         - name: kantra-rules-gen-app
           image: quay.io/sshaaf/kantra-rules-gen:latest
@@ -116,10 +116,22 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
-          volumeMounts:
-            - mountPath: /deployments/config
-              name: es-cert-volume
-              readOnly: true
-      serviceAccountName: kantra-rules-gen
-  triggers:
-    - type: ConfigChange # Redeploy when DC changes
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /q/health/live
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /q/health/ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5

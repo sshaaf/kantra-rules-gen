@@ -1,3 +1,9 @@
+[![Build and Push Backend](https://github.com/sshaaf/kantra-rules-gen/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/sshaaf/kantra-rules-gen/actions/workflows/build-and-push.yml)
+[![Java 21](https://img.shields.io/badge/Java-21-blue.svg)](https://openjdk.org/projects/jdk/21/)
+[![Gradle 8](https://img.shields.io/badge/Maven-8-green.svg)](https://maven.apache.org/)
+[![Quarkus 3](https://img.shields.io/badge/Quarkus-3-blue.svg)](https://quarkus.io/)
+
+
 # Kantra Rules Generator
 
 A modern web-based chatbot application that generates Konveyor Kantra migration rules for Java developers migrating applications from one framework version to another. Uses LangChain4j and Gemini AI to generate rules in real-time.
