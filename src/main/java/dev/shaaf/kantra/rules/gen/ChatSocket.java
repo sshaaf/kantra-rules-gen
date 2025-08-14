@@ -10,9 +10,9 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class ChatSocket {
 
-    private final RuleGenerator bot;
+    private final RuleGeneratorLegacy bot;
 
-    public ChatSocket(RuleGenerator bot) {
+    public ChatSocket(RuleGeneratorLegacy bot) {
         this.bot = bot;
     }
 
